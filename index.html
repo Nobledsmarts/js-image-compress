@@ -7,7 +7,11 @@
     <title>compress image with javascript</title>
 </head>
 <body>
+    <p> file </p>
     <input id="inputFile" type="file" accept="image/*">
+    <br>
+    <p> Compress Ratio (0 - 1)</p>
+    <input type="number" value="0.1" id="reduceRatio" max="1">
     <br>
     <div style="display: flex; justify-content: space-between; flex-wrap: wrap;" align="center">
         <div>
@@ -28,6 +32,8 @@
         let preview2 = document.getElementById('preview2');
         let size1 = document.getElementById('size1');
         let size2 = document.getElementById('size2');
+        let reduceRatio = +document.getElementById('reduceRatio').value;
+        reduceRatio = reduceRatio < 0 ? 0 : (reduceRatio > 1 ? 1 : reduceRatio);
         document.getElementById('inputFile').addEventListener('change', (event) => {
            compressImage(event);
         });

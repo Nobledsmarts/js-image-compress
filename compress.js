@@ -10,7 +10,7 @@ let compressImage = (event) => {
 
     const reader = new FileReader();
     //the new image quality minimum = 0, maximum = 1;
-    const REDUCE_RATIO = 0.1;
+    const REDUCE_RATIO = reduceRatio || 0.1;
     reader.addEventListener('loadend', (event) => {
         const image = new Image();
         image.src = event.target.result;
