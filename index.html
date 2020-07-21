@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="compress.js"></script>
+    <title>compress image with javascript</title>
+</head>
+<body>
+    <input id="inputFile" type="file" accept="image/*">
+    <br>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;" align="center">
+        <div>
+            <div style="width:600px;">
+                <h4>ORIGINAL</h4> <b>size (in kilobytes)</b> <span id="size1">0</span>kb
+            </div>
+            <img id="preview1" style="width:600px">
+        </div>
+        <div>
+            <div style="width:600px">
+                <h4>COMPRESSED</h4> <b>size (in kilobytes)</b> <span id="size2">0</span>kb
+            </div>
+            <img id="preview2" style="width:600px">
+        <div>
+    </div>
+    <script>
+        let preview1 = document.getElementById('preview1');
+        let preview2 = document.getElementById('preview2');
+        let size1 = document.getElementById('size1');
+        let size2 = document.getElementById('size2');
+        document.getElementById('inputFile').addEventListener('change', (event) => {
+           compressImage(event);
+        });
+    </script>
+</body>
+</html>
